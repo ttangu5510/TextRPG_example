@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_example
+namespace TextRPG_example.Scenes
 {
     public class TitleScene : Scene
     {

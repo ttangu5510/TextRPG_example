@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // 씬 들이 많아질 테니 폴더로 관리
-namespace TextRPG_example
+namespace TextRPG_example.Scenes
 {
     // 상황마다 다 다른 상황이기에 오버라이드 함수로 구현
     public abstract class Scene

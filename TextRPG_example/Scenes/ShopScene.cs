@@ -1,4 +1,4 @@
-﻿namespace TextRPG_example
+﻿namespace TextRPG_example.Scenes
 {
     public class ShopScene : Scene
     {

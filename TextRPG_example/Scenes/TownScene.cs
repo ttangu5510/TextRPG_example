@@ -4,16 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_example
+namespace TextRPG_example.Scenes
 {
     public class TownScene : Scene
     {
         public override void Render()
         {
-            Console.WriteLine("마을에는 사람들이 북적거린다" +
-                "\n마을 주민들이 수레에 물건들이 싣고나르고 있다.\n상인들은 물건들을 팔기 위해 열심히 호객행위를 한다." +
-                "\n 건물 사이 골목 앞에는 수상한 사람이 쳐다보고 있다.\n");
-            
+            string[] text = {"마을에는 사람들이 북적거린다",
+            "농민처럼 보이는 사람이 수레에 물건을 실어 나르고 있다.",
+            "상인들은 물건들을 팔기 위해 열심히 호객행위를 한다.",
+            "건물 사이 골목 앞에는 수상한 사람이 쳐다보고 있다.\n" };
+            for (int i = 0; i < text.Length; i++)
+            {
+                Util.Print(text[i], ConsoleColor.White,25);
+                Thread.Sleep(500);
+            }
         }
 
         public override void SelectChoice()
@@ -31,8 +36,16 @@ namespace TextRPG_example
                     Console.WriteLine("\n\"어서오시게! 뭐든지 다 있다네!\"\n당신은 상인을 찾았다\n");
                     break;
                 case ConsoleKey.D2:
-                    Console.WriteLine("\n골목 앞을 지나가다 깡패들이 말을 걸어옵니다\"어이 꼬마야! 잠시 형들 좀 볼까?\"\n");
-                    break;
+                    Util.Print("\n골목 앞을 지나가다 깡패들이 말을 걸어옵니다\n\"어이 꼬마야! 잠시 형들 좀 볼까?\"\n",ConsoleColor.Red,25);
+                    if (Game.Player.Speed >= 10)
+                    {
+                        Console.WriteLine("당신은 재빠르게 골목에서 도망쳤습니다.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("당신은 골목으로 끌려가 죽을때까지 맞고 모든 돈을 뺏겼습니다...");
+                    }
+                        break;
                 case ConsoleKey.D3:
                     Console.WriteLine("\n마을 밖 사냥터로 나갑니다.\n");
                     break;
@@ -56,7 +69,7 @@ namespace TextRPG_example
                     Game.ChangeScene("Shop");
                     break;
                 case ConsoleKey.D2:
-                    Game.GameOver("위험해 보이는 곳은 신중히 가자");
+                    Game.GameOver("스피드가 부족했다. 요구 스피드 : 10");
                     break;
                 case ConsoleKey.D3:
                     //Game.ChangeScene("");
