@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_example.NPC
+namespace TextRPG_example.Item
 {
-    public class ShopNPC
+    internal class ShortKnife
     {
-
     }
 }

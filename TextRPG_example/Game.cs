@@ -32,9 +32,7 @@ namespace TextRPG_example
             // 1. 게임 설정
             // 플레이어 초기설정
             player = new Player();
-            player.Power = 10;
-            player.Speed = 5;
-            player.Gold = 1000;
+
             // 딕셔너리로 씬들 저장하고 관리
             // 자주 추가 삭제 하지 않기 때문에, 적합함
             sceneDic = new Dictionary<string, Scene>();
@@ -87,7 +85,8 @@ namespace TextRPG_example
             Console.Clear();
             Console.WriteLine("*****************************");
             Console.WriteLine("* 플레이어");
-            Console.WriteLine("* 힘 : {0}\t  속도 : {1}\t 소지금 : {2}", player.Power,player.Speed,player.Gold);
+            Console.WriteLine("* 레벨   : {0}\t  공격력 : {1}\t 소지금 : {2}", player.Level,player.Power,player.Gold);
+            Console.WriteLine("* 경험치 : {0}\t  방어력 : {1}\t 소지금 : {2}", player.Exp,player.Defence,player.Speed);
             Console.WriteLine("*****************************");
             Console.WriteLine();
         }

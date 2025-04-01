@@ -8,6 +8,6 @@ namespace TextRPG_example.NPC
 {
     public class NPC
     {
-
+        protected List<Item.Item> items;
     }
 }

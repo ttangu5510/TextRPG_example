@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_example.NPC
+namespace TextRPG_example.Monster
 {
-    public class ShopNPC
+    internal class Goblin
     {
-
     }
 }

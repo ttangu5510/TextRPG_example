@@ -56,6 +56,7 @@ namespace TextRPG_example
             Power = 5;
             Defence = 3;
             Speed = 5;
+            Gold = 1000;
         }
     }
 }

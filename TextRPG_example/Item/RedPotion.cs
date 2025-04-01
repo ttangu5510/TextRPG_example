@@ -9,8 +9,8 @@
         }
         public RedPotion()
         {
-            Name = "포션";
-            Description = "포션이다. 사용하면 체력을 회복한다";
+            Name = "빨간 포션";
+            Description = $"사용하면 체력을 {HpHeal}만큼 회복한다";
             ItemNumber = 1;
             ItemId = 0;
         }

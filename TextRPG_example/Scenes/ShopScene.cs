@@ -58,7 +58,7 @@
 
         public override void SelectChoice()
         {
-            Console.WriteLine("\n1. 단검을 산다\n2. 신발을 산다\n3. 대화\n4. 갈취\n5. 돌아가기\n");
+            Console.WriteLine("\n1. 산다\n2. 판다\n3. 대화\n4. 갈취\n5. 돌아가기\n");
         }
 
         public override void Wait()
