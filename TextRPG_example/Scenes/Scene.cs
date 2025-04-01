@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_example.NPC;
+using TextRPG_example.Item;
 
 // 씬 들이 많아질 테니 폴더로 관리
 namespace TextRPG_example.Scenes

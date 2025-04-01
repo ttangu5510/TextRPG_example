@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_example.Scenes;
+using TextRPG_example.Item;
 
 namespace TextRPG_example
 {
@@ -33,6 +34,7 @@ namespace TextRPG_example
             player = new Player();
             player.Power = 10;
             player.Speed = 5;
+            player.Gold = 1000;
             // 딕셔너리로 씬들 저장하고 관리
             // 자주 추가 삭제 하지 않기 때문에, 적합함
             sceneDic = new Dictionary<string, Scene>();
@@ -85,7 +87,7 @@ namespace TextRPG_example
             Console.Clear();
             Console.WriteLine("*****************************");
             Console.WriteLine("* 플레이어");
-            Console.WriteLine("* 힘 : {0}\t  속도 : {1}", player.Power,player.Speed);
+            Console.WriteLine("* 힘 : {0}\t  속도 : {1}\t 소지금 : {2}", player.Power,player.Speed,player.Gold);
             Console.WriteLine("*****************************");
             Console.WriteLine();
         }
