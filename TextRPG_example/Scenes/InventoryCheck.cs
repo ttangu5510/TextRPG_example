@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TextRPG_example.Scenes
 {
-    // TODO : 전투 필드 구현필요
-    public class Field : Scene
+    // TODO 인벤토리 확인 구현
+    public class InventoryCheck : Scene
     {
         public override void Render()
         {

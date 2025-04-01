@@ -29,11 +29,24 @@ namespace TextRPG_example.Scenes
             {
                 case ConsoleKey.D1:
                     Util.Print($"{shopNPC.Items[0].Name}을 구매했다!");
+                    Game.Player.Inventory.Add(new Item.RedPotion());
                     break;
-                case ConsoleKey.D2:
-                    Game.Player.Equipments[EquipPart.Weapon] = new Item.ShortKnife();
-                    Util.Print($"{shopNPC.Items[1].Name}을 구매했다!");
-                    Util.Print($"{shopNPC.Items[1].}")
+                case ConsoleKey.D2:                    
+                    if(Game.Player.Gold >= shopNPC.Items[1].BuyPrice)
+                    {
+                        if (Game.Player.Equipments[EquipPart.Weapon] == null)
+                        {
+                            Util.Print("장비를 착용합니다");
+                            Game.Player.Equip(shopNPC.Items[1] as Item.EquipItem);
+                        }
+                        Util.Print($"{shopNPC.Items[1].Name}을 구매했다!");
+                        Game.Player.Power += shopNPC.Items[1].Power;
+                        Game.Player.Gold -= shopNPC.Items[1].BuyPrice;
+                    }
+                    else
+                    {
+                        Util.Print($"돈이 부족하구만 자네...");
+                    }
                     break;
                 case ConsoleKey.D3:
                     break;

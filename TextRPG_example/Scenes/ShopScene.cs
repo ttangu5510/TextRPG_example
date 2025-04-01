@@ -18,9 +18,6 @@ namespace TextRPG_example.Scenes
                 case ConsoleKey.D1:
                     break;
                 case ConsoleKey.D2:
-                    Util.Print("당신은 신발을 구매했다.");
-                    Util.Print("공격력이 6 올랐다!");
-                    Game.Player.Speed += 6;
                     break;
                 case ConsoleKey.D3:
                     Util.Print("\"그래 이제 막 모험을 시작한 신참이구만? 앞으로도 자주 볼 수 있길 바라네!\"");

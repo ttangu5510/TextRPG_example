@@ -6,26 +6,30 @@ using System.Threading.Tasks;
 
 namespace TextRPG_example.Scenes
 {
-    // TODO : 전투 필드 구현필요
-    public class Field : Scene
+    public class ShopSell : Scene
+        // TODO : 파는 화면 구현
     {
+        public override void Next()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Render()
         {
             throw new NotImplementedException();
         }
-        public override void SelectChoice()
-        {
-            throw new NotImplementedException();
-        }
+
         public override void Result()
         {
             throw new NotImplementedException();
         }
-        public override void Wait()
+
+        public override void SelectChoice()
         {
             throw new NotImplementedException();
         }
-        public override void Next()
+
+        public override void Wait()
         {
             throw new NotImplementedException();
         }

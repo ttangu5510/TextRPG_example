@@ -26,6 +26,13 @@ namespace TextRPG_example.Item
         public int ItemId { get { return itemId; } set { itemNumber = value; } }
         public int BuyPrice { get { return buyPrice; } set {  buyPrice = value; } }
         public int SellPrice { get { return sellPrice; } set {  sellPrice = value; } }
+        protected int power;
+        public int Power { get { return power; } set { power = value; } }
+        protected int defence;
+        public int Defence { get { return defence; } set { defence = value; } }
+       
+        protected int durability;
+        public int Durability { get { return durability; } set { durability = value; } }
         public Item()
         {
             Name = "";
@@ -34,6 +41,8 @@ namespace TextRPG_example.Item
             ItemId = 0;
             BuyPrice = 0;
             SellPrice = 0;
+            Power = 0;
+            Defence = 0;
         }
 
     }

@@ -39,12 +39,16 @@
             Speed = 5;
             critical = 10;
             Gold = 1000;
-            equipments[EquipPart.Head] = new Item.EquipNohead();
-            equipments[EquipPart.TopWear] = new Item.EquipNoTop();
-            equipments[EquipPart.BottomWear] = new Item.EquipNoBottom();
-            equipments[EquipPart.Weapon] = new Item.EquipNoWeapon();
+            equipments[EquipPart.Head] = null;
+            equipments[EquipPart.TopWear] = null;
+            equipments[EquipPart.BottomWear] = null;
+            equipments[EquipPart.Weapon] = null;            
         }
-
+        public void Equip(Item.EquipItem equips)
+        {
+            //TODO : nullcheck, 인벤토리에서 제거, null 이 아닐 경우, 인벤토리로 낀 장비 옮기기
+            equipments[equips.type] = equips;
+        }
         public int playerAttack()
         {
             Random rand = new Random();
@@ -58,6 +62,13 @@
             {
                 Console.WriteLine("플레이어의 공격!");
                 return Power;
+            }
+        }
+        public void InventoryCheck()
+        {
+            for (int i = 0; i < Inventory.Count; i++)
+            {
+                Console.WriteLine($"{Inventory[i].Name}");
             }
         }
     }
