@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace TextRPG_example.Item
 {
-    internal class ShortKnife
+    public class ShortKnife : EquipItem
     {
+        public ShortKnife()
+        {
+            Power = 10;
+            Name = "단검";
+            BuyPrice = 500;
+            SellPrice = 200;
+        }
+        public override void Equip()
+        {
+            throw new NotImplementedException();
+        }
+        public override void UnEquip()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

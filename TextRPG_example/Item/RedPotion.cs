@@ -13,6 +13,8 @@
             Description = $"사용하면 체력을 {HpHeal}만큼 회복한다";
             ItemNumber = 1;
             ItemId = 0;
+            BuyPrice = 150;
+            SellPrice = 50;
         }
         public int ItemUse()
         {

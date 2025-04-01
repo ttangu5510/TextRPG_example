@@ -27,14 +27,17 @@
         public int MonsterAttack()
         {
             Random rand = new Random();
-            int randNum = rand.Next(50, 120);
-            int attackPower = randNum * Power / 100;
+            int randNum = rand.Next(0, 120);
             if(randNum > 100)
             {
-                Util.Print($"{Name}이 공격했다!\n{attackPower} 데미지!",ConsoleColor.Red,30);
+                Util.Print($"크리티컬 !!!\n{Name}이 공격했다!",ConsoleColor.Red,30);
+                return Power*130/100;
             }
-            Util.Print($"{Name}이 공격했다!\n{attackPower} 데미지!");
-            return attackPower;
+            else
+            {                
+                Util.Print($"{Name}이 공격했다!");
+                return Power;
+            }
         }
     }
 }

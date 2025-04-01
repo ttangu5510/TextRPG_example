@@ -39,7 +39,7 @@ namespace TextRPG_example
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Town", new TownScene());  
             sceneDic.Add("Shop", new ShopScene());
-
+            sceneDic.Add("ShopBuy", new ShopBuy());
             // 첫 씬
             // 딕셔너리 인덱서로 접근
             curScene = sceneDic["Title"];
@@ -86,7 +86,7 @@ namespace TextRPG_example
             Console.WriteLine("*****************************");
             Console.WriteLine("* 플레이어");
             Console.WriteLine("* 레벨   : {0}\t  공격력 : {1}\t 소지금 : {2}", player.Level,player.Power,player.Gold);
-            Console.WriteLine("* 경험치 : {0}\t  방어력 : {1}\t 소지금 : {2}", player.Exp,player.Defence,player.Speed);
+            Console.WriteLine("* 경험치 : {0}\t  방어력 : {1}\t 스피드 : {2}", player.Exp,player.Defence,player.Speed);
             Console.WriteLine("*****************************");
             Console.WriteLine();
         }
