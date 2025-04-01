@@ -9,12 +9,7 @@ namespace TextRPG_example
     public class TitleScene : Scene
     {
 
-        public override void Next()
-        {
-            // TODO 주석 - 할 일 목록으로 추가됨
-            // 보기 - 작업 목록 을 보면 알 수 있음
-            // TODO : 다음 씬으로 전환 구현 필요
-        }
+        
 
         public override void Render()
         {
@@ -34,5 +29,17 @@ namespace TextRPG_example
         }
 
         public override void Wait() { }
+        public override void Next()
+        {
+            // TODO 주석 - 할 일 목록으로 추가됨
+            // 보기 - 작업 목록 을 보면 알 수 있음
+            // TODO : 다음 씬으로 전환 구현 필요
+            switch(input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("Town");
+                    break;
+            }
+        }
     }
 }

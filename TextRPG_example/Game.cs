@@ -28,6 +28,9 @@ namespace TextRPG_example
             // 자주 추가 삭제 하지 않기 때문에, 적합함
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Town", new TownScene());  
+            sceneDic.Add("Shop", new ShopScene());
+
             // 첫 씬
             // 딕셔너리 인덱서로 접근
             curScene = sceneDic["Title"];
@@ -43,6 +46,8 @@ namespace TextRPG_example
             // 게임 동작시에 필요한 작업들
             while(gameOver == false)
             {
+                Console.Clear();
+
                 curScene.Render();
                 curScene.SelectChoice();
                 curScene.Input();
@@ -50,6 +55,10 @@ namespace TextRPG_example
                 curScene.Wait();
                 curScene.Next();
             }
+        }
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
     }
 }
