@@ -8,7 +8,7 @@ namespace TextRPG_example
 {
     public class Util
     {
-        public static void Print(string context, ConsoleColor textColor,int delay = 0)
+        public static void Print(string context, ConsoleColor textColor = ConsoleColor.White,int delay = 25)
         {
             Console.ForegroundColor = textColor;
             

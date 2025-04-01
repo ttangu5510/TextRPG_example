@@ -12,24 +12,36 @@ namespace TextRPG_example.Scenes
     {
         // 모든 상황에서 같은 input 변수를 쓰기 때문에 부모에서 설정
         protected ConsoleKey input;
-        // 상황 설명
+        /// <summary>
+        /// 상황 설명
+        /// </summary>
         public abstract void Render();
 
-        //선택지 제시
+        /// <summary>
+        /// 선택지 제시
+        /// </summary>
         public abstract void SelectChoice();
-        //선택지 입력
+        /// <summary>
+        /// 선택지 입력
+        /// </summary>
         public void Input()
         {
             input = Console.ReadKey(true).Key;
         }
 
-        // 결과출력
+        /// <summary>
+        /// 결과출력
+        /// </summary>
         public abstract void Result();
 
-        //다음으로 넘어가기
+        /// <summary>
+        /// 결과 이후 다음으로 넘어가기 전에 대기 상황
+        /// </summary>
         public abstract void Wait();
 
-        //다음 상황으로 전환
+        /// <summary>
+        /// 다음 상황으로 전환
+        /// </summary>
         public abstract void Next();
     }
 }
