@@ -56,7 +56,7 @@ namespace TextRPG_example
                     Game.ChangeScene("Shop");
                     break;
                 case ConsoleKey.D2:
-                    //Game.ChangeScene("");
+                    Game.GameOver("위험해 보이는 곳은 신중히 가자");
                     break;
                 case ConsoleKey.D3:
                     //Game.ChangeScene("");

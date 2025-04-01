@@ -60,5 +60,15 @@ namespace TextRPG_example
         {
             curScene = sceneDic[sceneName];
         }
+        public static void GameOver(string reason)
+        {
+            Console.Clear();
+            Console.WriteLine("*****************************");
+            Console.WriteLine("*         Game Over         *");
+            Console.WriteLine("*****************************");
+            Console.WriteLine();
+            Console.WriteLine($"이유 : {reason}");
+            gameOver = true;
+        }
     }
 }
