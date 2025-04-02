@@ -39,15 +39,36 @@
             Speed = 5;
             critical = 10;
             Gold = 1000;
-            equipments[EquipPart.Head] = null;
-            equipments[EquipPart.TopWear] = null;
-            equipments[EquipPart.BottomWear] = null;
-            equipments[EquipPart.Weapon] = null;            
+            equipments[EquipPart.Head] = new Item.EquipNohead();
+            equipments[EquipPart.TopWear] = new Item.EquipNoTop();
+            equipments[EquipPart.BottomWear] = new Item.EquipNoBottom();
+            equipments[EquipPart.Weapon] = new Item.EquipNoWeapon();            
         }
         public void Equip(Item.EquipItem equips)
         {
             //TODO : nullcheck, 인벤토리에서 제거, null 이 아닐 경우, 인벤토리로 낀 장비 옮기기
             equipments[equips.type] = equips;
+        }
+        public void UnEquip(Item.EquipItem equips)
+        {
+            Inventory.Add(equips);
+            //TODO : nullcheck, 인벤토리에서 제거, null 이 아닐 경우, 인벤토리로 낀 장비 옮기기
+            switch(equips.type)
+            {
+                case EquipPart.Head:
+                    equipments[equips.type] = new Item.EquipNohead();
+                    break;
+                case EquipPart.TopWear:
+                    equipments[equips.type] = new Item.EquipNoTop();
+                    break;
+                case EquipPart.BottomWear:
+                    equipments[equips.type] = new Item.EquipNoBottom();
+                    break;
+                case EquipPart.Weapon:
+                    equipments[equips.type] = new Item.EquipNoWeapon();
+                    break;
+            }
+                
         }
         public int playerAttack()
         {

@@ -40,6 +40,8 @@ namespace TextRPG_example
             sceneDic.Add("Town", new TownScene());  
             sceneDic.Add("Shop", new ShopScene());
             sceneDic.Add("ShopBuy", new ShopBuy());
+            sceneDic.Add("Field", new Field());
+            sceneDic.Add("FieldBattle", new FieldBattle());
             // 첫 씬
             // 딕셔너리 인덱서로 접근
             curScene = sceneDic["Title"];
@@ -57,7 +59,8 @@ namespace TextRPG_example
             while(gameOver == false)
             {
                 Console.Clear();
-                PrintInfo();
+                if(curScene!=sceneDic["Title"])
+                    PrintInfo();
                 curScene.Render();
                 curScene.SelectChoice();
                 curScene.Input();
@@ -73,22 +76,34 @@ namespace TextRPG_example
         public static void GameOver(string reason)
         {
             Console.Clear();
-            Console.WriteLine("*****************************");
+            Console.WriteLine("*============================");
             Console.WriteLine("*         Game Over         *");
-            Console.WriteLine("*****************************");
+            Console.WriteLine("=============================");
             Console.WriteLine();
             Console.WriteLine($"이유 : {reason}");
             gameOver = true;
         }
         public static void PrintInfo()
         {
+            Console.WriteLine("===== 스테이터스 ================================================================");
+            Console.WriteLine("* 플레이어");
+            Console.WriteLine("* 레벨   : {0}\t공격력 : {1}\t소지금 : {2}", player.Level,player.Power,player.Gold);
+            Console.WriteLine("* 경험치 : {0}\t방어력 : {1}\t스피드 : {2}", player.Exp,player.Defence,player.Speed);
+            Console.WriteLine("=================================================================================");
+            Console.WriteLine("====== 장비 =====================================================================");
+            Console.WriteLine("* 무기 : {0}\t머리 : {1}\t상의 : {2}\t하의 : {3}", player.Equipments[EquipPart.Weapon], player.Equipments[EquipPart.Head], player.Equipments[EquipPart.TopWear], player.Equipments[EquipPart.BottomWear]);
+            Console.WriteLine("=================================================================================");
+            Console.WriteLine();
+        }
+        public static void PrintInventory()
+        {
             Console.Clear();
             Console.WriteLine("*****************************");
-            Console.WriteLine("* 플레이어");
-            Console.WriteLine("* 레벨   : {0}\t  공격력 : {1}\t 소지금 : {2}", player.Level,player.Power,player.Gold);
-            Console.WriteLine("* 경험치 : {0}\t  방어력 : {1}\t 스피드 : {2}", player.Exp,player.Defence,player.Speed);
-            Console.WriteLine("*****************************");
-            Console.WriteLine();
+            for(int i = 0;i<player.Inventory.Count;i++)
+            {
+                Console.WriteLine(player.Inventory[i].Name);
+            }
+
         }
     }
 }

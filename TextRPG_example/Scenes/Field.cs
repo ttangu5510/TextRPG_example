@@ -11,11 +11,26 @@ namespace TextRPG_example.Scenes
     {
         public override void Render()
         {
-            throw new NotImplementedException();
+            Random rand = new Random();
+            int randCase = rand.Next(1, 6);
+            switch(randCase)
+            {
+
+                case 1:
+                    // TODO : 퀘스트 구현
+                    Util.Print("마을 밖을 나서자 경비병이 불러 세운다");
+                    Util.Print("\"혹시 마을 밖으로 나갈 예정인가요? 모험가처럼 보이시는데, 부탁 하나 드려도 되겠습니까?\"");
+                    Console.WriteLine("[경비병의 부탁]\n1. 수락\n2. 거절");
+                    
+                    break;
+                default:
+                Util.Print("마을 밖으로 나왔다. 어디로 갈까?");
+                    break;
+            }
         }
         public override void SelectChoice()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("");
         }
         public override void Result()
         {
